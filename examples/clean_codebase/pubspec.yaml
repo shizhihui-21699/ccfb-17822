@@ -1,0 +1,4 @@
+name: shop_app
+description: A representative points-mall app: ordinary UI and business code.
+environment:
+  sdk: ^3.9.0

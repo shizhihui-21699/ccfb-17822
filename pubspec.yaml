@@ -1,0 +1,25 @@
+name: web_int_checker
+description: >-
+  Cross-platform integer semantics checker for Dart. Finds integer arithmetic,
+  shifts, bitwise operators, hashes and numeric literals whose result changes
+  when the same code is compiled to JavaScript, and suggests Int64/BigInt fixes.
+version: 0.1.0
+repository: https://github.com/example/web_int_checker
+
+environment:
+  sdk: ">=3.9.0 <4.0.0"
+
+dependencies:
+  # The official analyzer. The lower bound is what the analyzer plugin host
+  # pins; the upper bound keeps us within API-compatible releases.
+  analyzer: ">=14.3.0 <15.0.0"
+  analysis_server_plugin: ^0.3.22
+  args: ^2.7.0
+  path: ^1.9.0
+
+dev_dependencies:
+  test: ^1.33.0
+  lints: ^6.0.0
+
+executables:
+  web_int_checker:

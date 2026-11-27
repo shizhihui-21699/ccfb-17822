@@ -1,0 +1,19 @@
+name: web_int_check
+description: >-
+  Cross-platform integer-semantics checker for Dart. Finds integer literals,
+  bitwise/shift operations, arithmetic, hashing and JSON-derived int flows
+  whose result differs when compiled to JavaScript (dart2js), while staying
+  silent on ordinary small-integer code. Built on package:analyzer.
+version: 1.0.0
+publish_to: none
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  analyzer: '>=6.0.0 <8.0.0'
+  path: ^1.9.0
+  yaml: ^3.1.2
+
+dev_dependencies:
+  test: ^1.25.0

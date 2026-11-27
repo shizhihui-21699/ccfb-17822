@@ -1,0 +1,7 @@
+analyzer:
+  errors:
+    # The checker deliberately supports both analyzer 6.x and 7.x. The new
+    # element model (Element2/name3) does not exist in 6.x, so the shared
+    # implementation uses the legacy Element API with dynamic fallbacks.
+    # These deprecation infos are expected and intentional.
+    deprecated_member_use: ignore

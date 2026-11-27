@@ -1,0 +1,27 @@
+# Example configuration for web_int_check.
+# Either place a `web_int_check:` block in pubspec.yaml, or pass this file
+# with --config.
+web_int_check:
+  # Downgrade the "cannot prove" soft tier if the team relies entirely on
+  # @webSafeInt boundary contracts and hard warnings.
+  rules:
+    WEB_INT_009: info
+    # WEB_INT_001: error   # unrepresentable literal: never downgrade
+
+  # Additional untrusted numeric sources (bare name or target.name).
+  # Results of these methods are tracked like jsonDecode.
+  extra_sources:
+    - decodeEnvelope
+    - ApiClient.readNumber
+
+  # Boundary annotation names recognized in addition to the built-ins.
+  safe_annotations: [webSafeInt, safeInt]
+  unsafe_annotations: [webUnsafeInt]
+
+  # Turn ordinary unbounded-parameter arithmetic into info findings.
+  strict_arithmetic: false
+
+  # Path globs to skip.
+  exclude:
+    - "**/generated/**"
+    - "**/*.g.dart"
